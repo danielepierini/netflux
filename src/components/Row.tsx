@@ -5,14 +5,16 @@ import "./Rowposter.css";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
-const Row: React.FC<{ title: string; fetchUrl: string }> = ({
-  title,
-  fetchUrl,
-}) => {
+const Row: React.FC<{
+  title: string;
+  fetchUrl: string;
+  isLargeRow: boolean;
+}> = ({ title, fetchUrl, isLargeRow }) => {
   interface Movie {
     poster_path: string;
     name: string;
     id: string;
+    backdrop_path: string;
   }
   const [movies, setMovies] = useState<Movie[]>([]);
 
@@ -34,8 +36,10 @@ const Row: React.FC<{ title: string; fetchUrl: string }> = ({
         {movies.map((movies) => (
           <img
             key={movies.id}
-            className="row__poster"
-            src={`${base_url}${movies.poster_path}`}
+            className={`row__poster ${isLargeRow && "row__posterLarge"}`}
+            src={`${base_url}${
+              isLargeRow ? movies.poster_path : movies.backdrop_path
+            }`}
             alt={movies.name}
           ></img>
         ))}

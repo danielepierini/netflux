@@ -10,14 +10,41 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <h1>daniele programador!!!!</h1>
-      <Row title="Neflix Originals" fetchUrl={requests.fetchNetflixOriginals} />
-      <Row title="Trending Now" fetchUrl={requests.fectchTrending} />
-      <Row title="Action Movies" fetchUrl={requests.fetchActionMovies} />
-      <Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
-      <Row title="Horror Movies" fetchUrl={requests.fetchActionMovies} />
-      <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
-      <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
+      <Row
+        title="Neflix Originals"
+        fetchUrl={requests.fetchNetflixOriginals}
+        isLargeRow
+      />
+      <Row
+        title="Trending Now"
+        fetchUrl={requests.fectchTrending}
+        isLargeRow={false}
+      />
+      <Row
+        title="Action Movies"
+        fetchUrl={requests.fetchActionMovies}
+        isLargeRow={false}
+      />
+      <Row
+        title="Comedy Movies"
+        fetchUrl={requests.fetchComedyMovies}
+        isLargeRow={false}
+      />
+      <Row
+        title="Horror Movies"
+        fetchUrl={requests.fetchActionMovies}
+        isLargeRow={false}
+      />
+      <Row
+        title="Romance Movies"
+        fetchUrl={requests.fetchRomanceMovies}
+        isLargeRow={false}
+      />
+      <Row
+        title="Documentaries"
+        fetchUrl={requests.fetchDocumentaries}
+        isLargeRow={false}
+      />
     </div>
   );
 }
