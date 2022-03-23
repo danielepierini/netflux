@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Loop } from "@mui/icons-material";
 import instance from "../requests.js/Axios";
 import "./Rowposter.css";
 //import { request } from "https";
@@ -8,7 +9,7 @@ const base_url = "https://image.tmdb.org/t/p/original/";
 const Row: React.FC<{
   title: string;
   fetchUrl: string;
-  isLargeRow: boolean;
+  isLargeRow?: boolean;
 }> = ({ title, fetchUrl, isLargeRow }) => {
   interface Movie {
     poster_path: string;
@@ -33,6 +34,11 @@ const Row: React.FC<{
     <div className="row">
       <h2>{title}</h2>
       <div className="row__posters">
+        {!movies.length && (
+          <p className="row_posters-loader">
+            <Loop />
+          </p>
+        )}
         {movies.map((movies) => (
           <img
             key={movies.id}
