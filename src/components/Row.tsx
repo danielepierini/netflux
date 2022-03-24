@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Loop } from "@mui/icons-material";
+import { Loop, ChevronLeft, ChevronRight } from "@mui/icons-material";
 import instance from "../requests.js/Axios";
 import "./Rowposter.css";
 //import { request } from "https";
@@ -32,13 +32,16 @@ const Row: React.FC<{
 
   return (
     <div className="row">
-      <h2>{title}</h2>
+      <ChevronLeft className="left__arrow" />
+      <ChevronRight className="right__arrow" />
+      <h2 className="title">{title}</h2>
       <div className="row__posters">
         {!movies.length && (
           <p className="row_posters-loader">
             <Loop />
           </p>
         )}
+
         {movies.map((movies) => (
           <img
             key={movies.id}

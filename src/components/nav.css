@@ -39,10 +39,10 @@
 }
 
 .nav__avatar {
-  position: fixed;
-  right: 20px;
-  width: 40px;
-  object-fit: contain;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  object-fit: cover;
   cursor: pointer;
 }
 .nav__logo {
