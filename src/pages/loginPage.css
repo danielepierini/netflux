@@ -36,9 +36,42 @@
     rgba(0, 0, 0, 0.8) 100%
   );
 }
+.loginPage__body > h1 {
+  font-size: 3.125rem;
+  margin-bottom: 20px;
+}
+.loginPage__body > h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
 
 .loginPage__body {
+  position: absolute;
+  top: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
   z-index: 1;
   color: white;
   padding: 20px;
+  left: 0;
+  right: 0;
+}
+.loginPage__input > form > input {
+  padding: 10px;
+  outline-width: 0;
+  height: 30px;
+  width: 30%;
+  border: none;
+  max-width: 600px;
+}
+
+.loginPage__getStarted {
+  padding: 16px 20px;
+  font-size: 1rem;
+  color: white;
+  background-color: red;
+  border: none;
+  font-weight: 600px;
 }

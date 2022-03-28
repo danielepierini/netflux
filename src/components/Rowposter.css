@@ -85,3 +85,6 @@
 .slider:hover .options {
   display: block;
 }
+.img {
+  border-radius: 5px;
+}
