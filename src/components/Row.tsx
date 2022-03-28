@@ -17,6 +17,7 @@ const Row: React.FC<{
     id: string;
     backdrop_path: string;
   }
+
   const [movies, setMovies] = useState<Movie[]>([]);
 
   useEffect(() => {
@@ -34,7 +35,13 @@ const Row: React.FC<{
     <div className="row">
       <ChevronLeft className="left__arrow" />
       <ChevronRight className="right__arrow" />
-      <h2 className="title">{title}</h2>
+      <div className="slider">
+        <h2 className="title">{title}</h2>
+        <div className="options">
+          <span>Explore All</span>
+        </div>
+      </div>
+
       <div className="row__posters">
         {!movies.length && (
           <p className="row_posters-loader">
@@ -45,7 +52,7 @@ const Row: React.FC<{
         {movies.map((movies) => (
           <img
             key={movies.id}
-            className={`row__poster ${isLargeRow && "row__posterLarge"}`}
+            className="row__poster"
             src={`${base_url}${
               isLargeRow ? movies.poster_path : movies.backdrop_path
             }`}

@@ -2,6 +2,8 @@
   position: relative;
   color: #fff;
   margin-left: 20px;
+  margin-top: 30px;
+  margin-bottom: 15px;
 }
 
 .row__posters {
@@ -11,6 +13,7 @@
   margin: 0 30px;
   min-height: 75px;
   position: relative;
+  margin-top: 30px;
 }
 .row__posters::-webkit-scrollbar {
   display: none;
@@ -31,6 +34,7 @@
   margin-right: 10px;
   transition: transform 450ms;
   width: calc(16.66% - 8.33px);
+
   border-radius: 5px;
 }
 
@@ -60,7 +64,24 @@
   z-index: 1;
 }
 
-.title {
-  margin-top: 30px;
-  margin-bottom: 15px;
+.options {
+  display: none;
+  background-color: black;
+  border-radius: 5px;
+}
+
+.span {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.slider {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* position: absolute; */
+}
+
+.slider:hover .options {
+  display: block;
 }
