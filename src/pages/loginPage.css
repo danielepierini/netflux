@@ -23,6 +23,7 @@
   background-color: #e50914;
   border: none;
   cursor: pointer;
+  margin: 0;
 }
 .loginPage__gradient {
   width: 100%;
@@ -37,13 +38,16 @@
   );
 }
 .loginPage__body > h1 {
-  font-size: 3.125rem;
+  font-size: 3.5rem;
   margin-bottom: 20px;
 }
 .loginPage__body > h2 {
   font-size: 2rem;
   font-weight: 400;
   margin-bottom: 30px;
+}
+.loginPage__body > h3 {
+  margin: 15px;
 }
 
 .loginPage__body {
@@ -68,10 +72,10 @@
 }
 
 .loginPage__getStarted {
-  padding: 16px 20px;
+  padding: 15px 20px;
   font-size: 1rem;
   color: white;
   background-color: red;
   border: none;
-  font-weight: 600px;
+  font-weight: 600;
 }

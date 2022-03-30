@@ -24,7 +24,11 @@ const LoginPage = () => {
           <SignupPage />
         ) : (
           <>
-            <h1> Unlimited movies, TV shows, and more.</h1>
+            <h1>
+              {" "}
+              Unlimited movies, TV <br />
+              shows, and more.
+            </h1>
             <h2>Watch anywhere. Cancel any time</h2>
             <h3>
               {" "}
