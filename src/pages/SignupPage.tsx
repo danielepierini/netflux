@@ -4,44 +4,49 @@ import "./signupPage.css";
 
 const SignupPage = () => {
   const [enteredEmail, setEnteredEmail] = useState("");
-  // const [enteredPassword, setEnteredPassword] = useState("");
-  const [enteredEmailIsValid, setEnteredEmailIsValid] = useState(false);
-  // const [enteredPasswordIsValid, setEnteredPasswordIsValid] = useState(false);
+  const [enteredPassword, setEnteredPassword] = useState("");
   const [enteredEmailTouched, setEnteredEmailTouched] = useState(false);
-  // const [enteredPasswordIsTouched, setEnteredPasswordIsTouched] = useState(false);
+  const [enteredPasswordIsTouched, setEnteredPasswordTouched] = useState(false);
+
+  const enteredEmailIsValid = enteredEmail.trim() !== "";
+  const emailInputIsInvalid = !enteredEmailIsValid && enteredEmailTouched;
+  const enteredPasswordIsValid = enteredPassword.length !== 0;
+  const passwordInputIsInvalid =
+    !enteredPasswordIsValid && enteredPasswordIsTouched;
 
   const emailInputChangeHandler = (event: any) => {
     setEnteredEmail(event.target.value);
   };
 
-  const emailInputBlurHandler = (event: any) => {
-    setEnteredEmailTouched(true);
-    if (enteredEmail.trim() === "") {
-      setEnteredEmailIsValid(false);
-      return;
-    }
+  const passwordInputChangeHandler = (event: any) => {
+    setEnteredPassword(event.target.value);
   };
 
-  // const passwordInputChangeHandler = (event: any) => {
-  //   setEnteredPassword(event.target.value);
-  // };
+  const emailInputBlurHandler = (event: any) => {
+    setEnteredEmailTouched(true);
+  };
+
+  const passwordInputBlurHandler = (event: any) => {
+    setEnteredPasswordTouched(true);
+  };
 
   const formSubmissionHandler = (event: any) => {
     event.preventDefault();
 
     setEnteredEmailTouched(true);
+    setEnteredPasswordTouched(true);
 
-    if (enteredEmail.trim() === "") {
-      setEnteredEmailIsValid(false);
+    if (!enteredEmailIsValid && !enteredPasswordIsValid) {
       return;
     }
 
-    setEnteredEmailIsValid(true);
-
+    console.log(enteredEmail);
+    console.log(enteredPassword);
+    setEnteredPassword("");
     setEnteredEmail("");
+    setEnteredEmailTouched(false);
+    setEnteredPasswordTouched(false);
   };
-
-  const emailInputIsInvalid = !enteredEmailIsValid && enteredEmailTouched;
 
   return (
     <div className="signup__Page">
@@ -62,9 +67,15 @@ const SignupPage = () => {
         <input
           placeholder="Password"
           type="password"
-          // onChange={passwordInputChangeHandler}
-          // value={enteredPassword}
+          onChange={passwordInputChangeHandler}
+          onBlur={passwordInputBlurHandler}
+          value={enteredPassword}
         />
+        {passwordInputIsInvalid && (
+          <p className="error__text">
+            Your password must contain between 4 and 60 characters.{" "}
+          </p>
+        )}
 
         <button type="submit">Sign In</button>
       </form>
