@@ -7,12 +7,21 @@ const SignupPage = () => {
   const [enteredPassword, setEnteredPassword] = useState("");
   const [enteredEmailTouched, setEnteredEmailTouched] = useState(false);
   const [enteredPasswordIsTouched, setEnteredPasswordTouched] = useState(false);
+  // const [formIsValid, setFormIsValid] = useState(false);
 
-  const enteredEmailIsValid = enteredEmail.trim() !== "";
+  const enteredEmailIsValid =
+    enteredEmail.trim() !== "" && enteredEmail.includes("@");
   const emailInputIsInvalid = !enteredEmailIsValid && enteredEmailTouched;
-  const enteredPasswordIsValid = enteredPassword.length !== 0;
+  const enteredPasswordIsValid =
+    enteredPassword.length !== 0 && enteredPassword.length === 4;
   const passwordInputIsInvalid =
     !enteredPasswordIsValid && enteredPasswordIsTouched;
+
+  let formIsValid = false;
+
+  if (enteredEmailIsValid && enteredPasswordIsValid) {
+    formIsValid = true;
+  } else formIsValid = false;
 
   const emailInputChangeHandler = (event: any) => {
     setEnteredEmail(event.target.value);
@@ -77,7 +86,9 @@ const SignupPage = () => {
           </p>
         )}
 
-        <button type="submit">Sign In</button>
+        <button disabled={!formIsValid} type="submit">
+          Sign In
+        </button>
       </form>
     </div>
   );
