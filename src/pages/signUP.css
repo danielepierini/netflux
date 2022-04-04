@@ -1,50 +1,58 @@
-.signup__Page {
-  max-width: 300px;
-
-  padding: 70px;
-  margin-left: auto;
-  margin-right: auto;
+.login__body {
+  padding: 60px;
+  z-index: 90;
+  position: relative;
+  max-width: 450px;
+  height: 630px;
+  margin-left: 50%;
   background-color: rgba(0, 0, 0, 0.85);
+  border-radius: 10px;
+  box-sizing: border-box;
+  transform: translateX(-50%);
 }
 
-.signup__Page > form {
-  display: grid;
-  flex-direction: column;
-}
-.signup__Page > form > input {
-  outline-width: 0;
-  height: 40px;
-  margin-bottom: 14px;
-  border-radius: 5px;
-  border: none;
-  padding: 5px 15px;
-}
-.signup__Page > form > button {
-  padding: 16px 20px;
-  font-size: 1rem;
+.login__body h2 {
+  display: flex;
+  font-size: 32px;
   color: white;
-  border-radius: 5px;
-  background-color: red;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  margin-top: 20px;
-}
-.signup__Page > form > h1 {
-  text-align: left;
+  margin-top: 0;
+  align-items: flex-start;
   margin-bottom: 25px;
 }
-.error__text {
-  color: orange;
-  margin-bottom: 10px;
-  margin-top: auto;
+
+.login__body input {
+  height: 50px;
+  width: 100%;
+  border-radius: 3px;
+  color: white;
+  background-color: #333;
+  border: 1px solid #333;
+  padding-left: 15px;
+  box-sizing: border-box;
+  outline: none;
 }
-.signup__Page > form > button:disabled,
+
+.input__wrap {
+  margin-bottom: 25px;
+}
+
+.login__body button {
+  height: 50px;
+  width: 100%;
+  color: white;
+  background-color: #e50914;
+  border-radius: 3px;
+  font-weight: 500px;
+  font-size: 16px;
+  border: 1px solid #e50914;
+}
+
+.login__ body button:disabled,
 button:disabled:hover,
 button:disabled:active {
-  /* background-color: #ccc;
+  background-color: #ccc;
   color: #292929;
-  border-color: #ccc; */
+  border-color: #ccc;
   cursor: not-allowed;
 }
 
@@ -55,23 +63,20 @@ button:disabled:active {
   font-size: 12px;
 }
 .support input {
-  /* margin-top: 10px; */
   width: 15px;
   height: 15px;
 }
 
 .remember span {
-  margin-right: 0px;
+  margin-right: 10px;
   height: 25px;
 }
 .need__help {
-  padding: 5px;
   display: flex;
 }
-
 .login__facebook {
   display: flex;
-  flex-direction: row;
+  align-items: center;
   width: 100%;
   color: #737373;
 }

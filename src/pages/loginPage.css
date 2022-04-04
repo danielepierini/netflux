@@ -7,6 +7,7 @@
   background-size: cover;
 }
 .loginPage__logo {
+  margin-top: 15px;
   position: fixed;
   left: 0;
   width: 150px;
